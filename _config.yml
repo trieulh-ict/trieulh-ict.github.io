@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en"
-title                    : "Developer, Player, a Ninja..."
+title                    : "A Ninja, A Player, A Developer..."
 title_separator          : "-"
 name                     : "Trieu Le Hai"
 description              : "Andoid, Life, and everything..."
@@ -87,9 +87,9 @@ author:
   codepen          :
   dribbble         :
   flickr           :
-  facebook         : "https://www.facebook.com/trieulh.bk"
+  facebook         : "trieulh.bk"
   foursquare       :
-  github           : "https://github.com/trieulh-ict"
+  github           : "trieulh-ict"
   google_plus      :
   keybase          :
   instagram        :
@@ -244,3 +244,9 @@ defaults:
       comments: # true
       share: true
       related: true
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
