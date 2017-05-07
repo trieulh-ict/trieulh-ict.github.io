@@ -175,6 +175,8 @@ Phương pháp này được gọi là **double checked locking** (**Google** b�
 
 Giờ thì có lẽ ok rồi đấy.
 
+![](https://cdn.meme.am/cache/instances/folder847/250x250/41665847/too-damn-high-the-number-of-singletons-in-our-codebase-is-too-damn-high.jpg)
+
 ---
 
 Kết thúc bài viết đầu tiên. Nếu bạn cảm thấy mình viết vẫn còn khó hiểu, có thể liên hệ trực tiếp qua Facebook hoặc Email của mềnh (Mọi thức đã được đính kèm ở đâu đấy trong web :see_no_evil:)
