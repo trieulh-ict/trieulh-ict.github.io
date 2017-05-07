@@ -17,7 +17,8 @@ Mở đầu series về Design Pattern, chúng ta sẽ bắt đầu đi từ nh�
 Đối với các môn sinh tìm hiểu về Design Pattern, **Singleton** có lẽ là pattern thuộc dạng dễ hiểu nhất, dễ thực hiện nhất. Tuy nhiên để áp dụng đúng cách, đúng trường hợp thì lại không đơn giản. Ờm nói cho nguy hiểm vậy thôi chứ cũng k đến nỗi lằng nhằng lắm, đại khái là có 1 số trường hợp chúng ta cần phải chú ý để có thể tối ưu được việc sử dụng **Singleton** trong project. :smile:
 
 ### Định nghĩa
-Nếu bạn đã hiểu khái niệm về [Instance](https://en.wikipedia.org/wiki/Instance_(computer_science)) thì việc hiểu công dụng của Singleton cũng không gặp nhiều khó khăn. Đại khái là, **Singleton** đảm bảo sẽ chỉ có duy nhất 1 Instance của _class_ được khởi tạo và sử dụng trên máy ảo JVM.
+Nếu bạn đã hiểu khái niệm về [Instance](https://en.wikipedia.org/wiki/Instance_(computer_science)) thì việc hiểu công dụng của **Singleton** cũng không gặp nhiều khó khăn.
+>Đại khái là, **Singleton** đảm bảo sẽ chỉ có duy nhất 1 **Instance** của _class_ được khởi tạo và sử dụng trên máy ảo JVM.
 
 Sound good? Công dụng nó chỉ có vậy thoai :smile:
 
@@ -30,7 +31,7 @@ Tiếp theo, các quy định cơ bản chúng ta phải tuân thủ khi sử d�
 Hừm, vẫn còn thấy khó hiểu? Đang ngồi lẩm bẩm sao thằng tác giả nói gì mà lằng nhằng thế? Okidoki, vậy bây giờ ta sẽ đi vào từng ví dụ cụ thể, để hiểu cách sử dụng của **Singleton** trong từng trường hợp nhé, để đỡ phải ngồi chửi thầm...
 
 ### Cách sử dụng
-> Nói thẳng ra là mình cũng chẳng sử dụng hết các cách này đâu, cũng tham khảo 1 số nguồn và tổng hợp lại cho mọi người thôi. :smile:
+Nói thẳng ra là mình cũng chẳng sử dụng hết các cách này đâu, cũng tham khảo 1 số nguồn và tổng hợp lại cho mọi người thôi. :smile:
 
 **Singleton** mình liệt kê ở đây sẽ có 4 cách cơ bản và phổ biến nhất (Sử dụng tên tiếng Anh cho mọi người dễ search):
 
