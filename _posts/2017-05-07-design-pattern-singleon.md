@@ -60,7 +60,7 @@ public class EagerInitializedSingleton {
 }
 ```
 
-Quá đơn giản phải không ạ? Áp dụng đúng theo các qui định ở trên là xong, có biến `private` nè, có `private` `constructor` nè, có 'private' 'method' để lấy **Instance** nè. Ờ nhưng mà cách này thì độ thực tế không cao lắm, à mà có thể cũng cao, vì nhiều ông dev lười để ý, cứ phệt toẹt như sách vào thế này... Lí do vì sao mà mềnh nói lợi bất cập hại, đơn giản là vì... vì... **Java** và **JVM** nó tồn tại 1 cái gọi là [Class loading](http://www.onjava.com/pub/a/onjava/2005/01/26/classloading.html)...
+Quá đơn giản phải không ạ? Áp dụng đúng theo các qui định ở trên là xong, có biến `private` nè, có `private` `constructor` nè, có `private` `method` để lấy **Instance** nè. Ờ nhưng mà cách này thì độ thực tế không cao lắm, à mà có thể cũng cao, vì nhiều ông dev lười để ý, cứ phệt toẹt như sách vào thế này... Lí do vì sao mà mềnh nói lợi bất cập hại, đơn giản là vì... vì... **Java** và **JVM** nó tồn tại 1 cái gọi là [Class loading](http://www.onjava.com/pub/a/onjava/2005/01/26/classloading.html)...
 
 Tức là, Ứng dụng trước khi hoạt động được, **JVM** sẽ tải hết thông tin về **Class** vào bộ nhớ (bao gồm cả _name, method, variable_ đi kèm blo bla...).
 
@@ -125,7 +125,7 @@ public class LazyInitializedSingleton {
 Cách này nghe có vẻ hợp lý rồi đấy, k còn phải lăn tăn việc **Exception** hay tối ưu bộ nhớ nữa. Tuy nhiên thịt chó hay ăn với lá mơ, và đời cũng không như là mơ. Phương pháp này trong 1 số trường hợp sẽ là điểm yếu chết người. Đó là khi được sử dụng trong **Distributed system**, hay gọn hơn là trong **Multi-thread system**.
 
 Lí do là sao, là đây:
-> Điều gì xảy ra khi 2 _Thread_ riêng biệt cùng gọi method `getInstance` và check được rằng `instance == null` trả bề `true`. Lúc đấy `constructor` sẽ bị gọi 2 lần (hoặc tệ hơn là n lần nếu có n _Thread_). Và thế là quy tắc về **Instance** sẽ bị phá vỡ.
+> Điều gì xảy ra khi 2 _Thread_ riêng biệt cùng gọi method `getInstance` và check được rằng `instance == null` trả về `true`. Lúc đấy `constructor` sẽ bị gọi 2 lần (hoặc tệ hơn là n lần nếu có n _Thread_). Và thế là quy tắc về **Instance** sẽ bị phá vỡ.
 
 Vậy chúng ta phải làm gì? Đến với cách 4 chứ làm gì...
 
