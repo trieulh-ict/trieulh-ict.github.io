@@ -78,7 +78,7 @@ analytics:
 # Site Author
 author:
   name             : "Le Hai Trieu"
-  avatar           : "https://scontent.fhan3-1.fna.fbcdn.net/v/t31.0-8/17218291_10155100062584346_7782356119832253260_o.jpg?oh=b83e2a771e36826e53dff79c52e1830a&oe=5969D3A6" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/avatar.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "ᕕ( ᐛ )ᕗ"
   location         : "Somewhere on Earth"
   email            : "trieulh.bk@gmail.com"
