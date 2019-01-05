@@ -252,6 +252,6 @@ Easy?
 
 Đọc đi đọc lại vẫn chưa hiểu cách dùng? Hãy in cái này ra mà dán lên bàn làm việc.
 
-![standard-function](../assets/images/standardfunction.png)
+![standard-function]({{site.url}}/assets/images/standardfunction.png)
 
 Cheer! Thank ae đã chịu khó đọc đến đây. Happy coding!
