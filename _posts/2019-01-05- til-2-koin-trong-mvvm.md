@@ -119,7 +119,7 @@ dependencies {
 
 MVVM về cơ bản sẽ gồm 3 thành phần chính là `Model` – `View` – `ViewModel` tương tác với nhau như mô tả ở hình dưới (Chi tiết lại mời các bạn google)
 
-![mvvm-architecture]({{site.url}}/assets/images/MVVM-architecture.png)
+![mvvm-architecture]({{site.url}}/assets/images/mvvm-architecture.png)
 
 *Source: Internet*
 
