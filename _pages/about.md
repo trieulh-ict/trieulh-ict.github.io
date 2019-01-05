@@ -17,7 +17,7 @@ modified: 2017-04-03T16:28:13+00:00
 
 Chào các bạn :smile: !
 
-Tên mềnh là **Lê Hải Triều**, tính đến 2017 thì được 26 cái xuân xanh. Hiện tại đang là một _Junior Android Developer_ cho [got it!](http://www.gotitapp.co/).
+Tên mềnh là **Lê Hải Triều**, tính đến 2018 thì được 27 cái xuân xanh. Hiện tại đang là một _Android Developer_ cho [Planday](https://www.planday.com/).
 
 Thực ra thân là 1 _Android Developer_, nhưng **blog** này mềnh nghĩ nếu chỉ viết về _#android_ hay _#tech_ thì chán ngắt. Thế nên các bạn có thể coi đây là nơi để tác giả chém gió, chém đủ loại trên trời dưới bể cũng đc :laughing:  
 
