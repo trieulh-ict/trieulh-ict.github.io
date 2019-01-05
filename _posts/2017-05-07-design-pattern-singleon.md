@@ -46,7 +46,7 @@ Ngoài ra còn mấy cách tricky kiểu như sử dụng **Enum** thì cho qua 
 
 Cách đầu tiên cũng là cách sơ đẳng, đơn giản cmn nhất, đúng kiểu đọc định nghĩa phát có thể viết được luôn rồi.
 
-```
+```java
 public class EagerInitializedSingleton {
 
     private static final EagerInitializedSingleton instance = new EagerInitializedSingleton();
@@ -74,7 +74,7 @@ Thế này cách này chỉ để cho biết thôi, chứ dùng thì vứt, vứ
 Cách này thông minh hơn cách 1 một tí, đó là có thể xử lý **Exception**! Wohooo!!! :ok_hand:
 
 
-```
+```java
 public class StaticBlockSingleton {
 
     private static StaticBlockSingleton instance;
@@ -107,7 +107,7 @@ Khái niệm **Lazy...** được sử dụng rất nhiều trong trong lập tr
 
 Đấy, lười chưa, tạo thì cấp cho luôn đi, lại còn phải khi nào dùng ms cấp cơ...
 
-```
+```java
 public class LazyInitializedSingleton {
 
     private static LazyInitializedSingleton instance;
@@ -133,7 +133,7 @@ Vậy chúng ta phải làm gì? Đến với cách 4 chứ làm gì...
 Phương pháp này sẽ giải quyết bài toán bằng cách:
 > Cho lần lượt từng _Thread_ truy cập vào method `getInstance()`
 
-```
+```java
 public class ThreadSafeSingleton {
 
     private static ThreadSafeSingleton instance;
@@ -158,7 +158,7 @@ Ahihi, bạn tin người vcd... Nghĩ gì mà lại đi dùng cách đấy... C
 
 Dùng cách này này:
 
-```
+```java
 public static ThreadSafeSingleton getInstanceUsingDoubleLocking(){
     if(instance == null){
         synchronized (ThreadSafeSingleton.class) {
