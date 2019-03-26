@@ -171,7 +171,7 @@ Những vấn đề này hoàn toàn có thể xử lý ở phần UI (xml). Ở
 ```kotlin
     private fun initView() {
         SearchViewObservable.fromView(searchEditText)
-            .filter { it.trim().isNotEmpty() }                 <---- This line
+            .filter { it.trim().isNotEmpty() } <---- This line
             .flatMap { text -> Observable.just(searchData(text)).delay(3000, TimeUnit.MILLISECONDS) }
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -190,7 +190,7 @@ Ta có thể xử lý bằng cách thêm operator `distinctUntilChanged()` vào 
     private fun initView() {
         SearchViewObservable.fromView(searchEditText)
             .filter { it.trim().isNotEmpty() }                 
-            .distinctUntilChanged()                             <---- This line
+            .distinctUntilChanged() <---- This line
             .flatMap { text -> Observable.just(searchData(text)).delay(3000, TimeUnit.MILLISECONDS) }
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -210,7 +210,7 @@ Hãy để ý vào UX, về lý mà nói, dữ liệu đầu ra sẽ chỉ hiể
         SearchViewObservable.fromView(searchEditText)
             .filter { it.trim().isNotEmpty() }
             .distinctUntilChanged()
-            .switchMap { text -> Observable.just(searchData(text)).delay(3000, TimeUnit.MILLISECONDS) }                              <---- This line
+            .switchMap { text -> Observable.just(searchData(text)).delay(3000, TimeUnit.MILLISECONDS) } <---- This line
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe {
@@ -225,8 +225,8 @@ Operator được sử dụng ở đây là `debound`. Về cơ bản, `debound`
 
 ```kotlin
         SearchViewObservable.fromView(searchEditText)
-            .debounce(1000, TimeUnit.MILLISECONDS)
-            .filter { it.trim().isNotEmpty() }                              <---- This line
+            .debounce(1000, TimeUnit.MILLISECONDS) <---- This line
+            .filter { it.trim().isNotEmpty() }
             .distinctUntilChanged()
             .switchMap { text -> Observable.just(searchData(text)).delay(3000, TimeUnit.MILLISECONDS) }
             .subscribeOn(Schedulers.io())
