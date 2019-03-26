@@ -3,7 +3,6 @@ title: "TIL#1: Cách sử dụng Standard Functions trong Kotlin"
 categories:
   - TodayILearned
 tags:
-  - til
   - kotlin
 ---
 

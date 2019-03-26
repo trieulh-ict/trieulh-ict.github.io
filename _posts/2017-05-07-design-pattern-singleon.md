@@ -2,8 +2,6 @@
 title: "[Design Pattern] Singleton và cách sử dụng trong Java"
 categories:
   - Design Pattern
-  - Java
-  - Vietnamese
 tags:
   - design-pattern
   - beginner
@@ -35,10 +33,13 @@ Nói thẳng ra là mình cũng chẳng sử dụng hết các cách này đâu,
 
 **Singleton** mình liệt kê ở đây sẽ có 4 cách cơ bản và phổ biến nhất (Sử dụng tên tiếng Anh cho mọi người dễ search):
 
-1. [Eager initialization](#1-eager-initialization)
-2. [Static block initialization](#2-static-block-initialization)
-3. [Lazy Initialization](#3-lazy-initialization)
-4. [Thread Safe Singleton](#4-thread-safe-singleton)
+- [Vậy Singleton Pattern là gì?](#v%E1%BA%ADy-singleton-pattern-l%C3%A0-g%C3%AC)
+  - [Định nghĩa](#%C4%91%E1%BB%8Bnh-ngh%C4%A9a)
+  - [Cách sử dụng](#c%C3%A1ch-s%E1%BB%AD-d%E1%BB%A5ng)
+  - [1. Eager initialization](#1-eager-initialization)
+  - [2. Static block initialization](#2-static-block-initialization)
+  - [3. Lazy Initialization](#3-lazy-initialization)
+  - [4. Thread Safe Singleton](#4-thread-safe-singleton)
 
 Ngoài ra còn mấy cách tricky kiểu như sử dụng **Enum** thì cho qua đi, khó nhớ lắm...
 
