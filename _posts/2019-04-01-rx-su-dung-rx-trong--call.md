@@ -1,5 +1,5 @@
 ---
-title: "RxBestPractices#2: Áp dụng Rx vào các bài toán API request"
+title: "RxBestPractices#2: Áp dụng Rx vào các bài toán xử lý API request"
 categories:
   - TodayILearned
 tags:
