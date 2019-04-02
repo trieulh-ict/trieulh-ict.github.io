@@ -153,7 +153,7 @@ api.requestAvatarUrl(userId)
     }
 ```
 
-Ở đây ta có thể dễ dàng nhận ra đây là 1 case xử lý không tốt. Để hiển thị avatar, ta đã phải render tận 3 lần: Từ Xml, từ placeholder method, và cuối cùng là từ avatarUrl. Ngoài việc xem xét về hiệu năng, ta có thể dễ dàng nhận ra việc set Avatar đã bị phân tán ở 2 nơi. 
+Ở đây ta có thể dễ dàng nhận ra đây là 1 case xử lý không tốt. Để hiển thị avatar, ta đã phải render tận 3 lần: Từ Xml, từ placeholder method, và cuối cùng là từ `avatarUrl`. Ngoài việc xem xét về hiệu năng, ta có thể dễ dàng nhận ra việc set Avatar đã bị phân tán ở 2 nơi. 
 
 Để giải quyết vấn đề này, ta có thể sư dụng operator `startWith()`:
 
@@ -194,6 +194,88 @@ Observable.concat(dataSource.getLocalData(), dataSource.getRemoteData())
 
 Ở đây, `concat()` đảm bảo dữ liệu từ Local sẽ được xử lý và render trước khi ta request API.
 
+![zip](http://reactivex.io/documentation/operators/images/concat.png "Zip Operator")
+
 Câu hỏi đặt ra ở đây: Trong trường hợp ta gặp Exception khi lấy dữ liệu trong Local Database, điều gì sẽ xảy ra?
 
-(To be continue)
+Với operator `concat`, khi xảy ra lỗi, **Observable** sẽ gọi `onError` và dừng tiến trình. Chính vì vậy nếu ta gặp **Exception** (Ví dụ như **IOException**) trong method `getLocalData()`, **Observable** sẽ không gọi tiếp `getRemoteData()` nữa. Vì vậy ta phải chủ động handle **Exception** để đảm bảo tiến trình được thực hiện đầy đủ:
+
+```kotlin
+
+val getLocalDataSource = dataSource.getLocalData()
+                            .onErrorResumeNext {e ->
+                                return Observable.empty()
+                            }
+
+val getRemoteDataSource = dataSource.getRemoteData()
+
+Observable.concat(getLocalDataSource, getRemoteDataSource)
+    .subscribeOn(Schedulers.io())
+    .observeOn(AndroidSchedulers.mainThread())
+    .toObservable()
+    .subscribe(data ->
+        //Render to UI
+    );
+
+```
+
+Operator `onErrorResumeNext` được thêm vào cho riêng local data, trong trường hợp gặp **Exception**, tiến trình sẽ chủ động gọi `Observable.empty()` để đảm bảo viẹc emit data được tiếp tục.
+
+Note: `empty()` không emit data mà huỷ luôn tiến trình lỗi.
+
+Trong trường hợp bạn muốn trả lại 1 giá trị mock data trong trường hợp lỗi, có thể tìm hiểu thêm operator `onErrorReturn`.
+
+## 4. Sử dụng zip() trong trường hợp cần kết hợp dữ liệu từ nhiều API
+
+Trong trường hợp cần kêt hợp dữ liệu từ 2 API, có 1 vấn đề gặp phải là API request là async method, đồng nghĩa với việc thời điểm trả về response là không cố định.
+
+Ví dụ, ta muốn build 1 **UserUIModel** chứa đầy đủ thông tin của 1 user, nhưng server hiện đang không cung cấp sẵn API trực tiếp mà chỉ có 2 API để GET profile cá nhân đến profile công viêc.
+
+Lúc này ta phải sử dụng đến operator `zip`:
+
+```kotlin
+val getPersonalDataSource = api.getPersonalData()
+val getWorkDataSource = api.getWorkData()
+
+Observable.zip(getLocalDataSource, getRemoteDataSource, { personalData, workData ->
+        buildUserUIModel(personalData, workData)
+    })
+    .subscribeOn(Schedulers.io())
+    .observeOn(AndroidSchedulers.mainThread())
+    .subscribe(userDataModel ->
+        //Render to UI
+    );
+```
+Operator `zip` đóng vai trò request 2 API, và đợi đến khi cả 2 hoàn thành, sẽ kết hợp dữ liệu trả về và emit 1 data duy nhất.
+
+![zip](http://reactivex.io/documentation/operators/images/zip.o.png "Zip Operator")
+
+Để ý kỹ Diagram, ta sẽ nhận thấy mặc định 2 Observable sẽ được xử lý tuần tự trên cùng 1 Thread (được gọi thông qua `subscribeOn()`). Tức là Api đầu tiên emit data, chờ Api thứ 2 hoàn thành mới tiền hành kết hợp dữ liệu.
+
+Hừm, vậy làm thế nào để 2 Api này được gọi song song nhỉ?
+
+Bài toán được giải quyết bằng cách ta sẽ cho mỗi Api request được subscribe trên **Thread** riêng biệt như sau:
+
+```kotlin
+val getPersonalDataSource = api.getPersonalData()
+                                .subscribeOn(Schedulers.newThread())
+val getWorkDataSource = api.getWorkData()
+                            .subscribeOn(Schedulers.newThread())
+
+Observable.zip(getLocalDataSource, getRemoteDataSource, { personalData, workData ->
+        buildUserUIModel(personalData, workData)
+    })
+    .subscribeOn(Schedulers.io())
+    .observeOn(AndroidSchedulers.mainThread())
+    .subscribe(userDataModel ->
+        //Render to UI
+    );
+```
+
+Mỗi Api sẽ được thực hiện trên 1 **Thread** riêng, sau đó được đẩy về **IO Thread** để kết hợp. Vậy là ta đã giảm thiểu được thời gian chờ như ở cách trước.
+
+
+## Kết
+Trên đây chỉ là 4 cách sử dụng Rx thông dụng trong các trường hợp làm việc với Network. Nếu có thêm bài toán nào cần giải quyết liên quan đến vấn đề này, hi vọng anh em nhiệt tình đóng góp.
+
+Happy Coding!
