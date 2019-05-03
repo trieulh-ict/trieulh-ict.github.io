@@ -196,6 +196,8 @@ Observable.concat(dataSource.getLocalData(), dataSource.getRemoteData())
 
 ![zip](http://reactivex.io/documentation/operators/images/concat.png "Zip Operator")
 
+_Source: Reactivex.io_
+
 Câu hỏi đặt ra ở đây: Trong trường hợp ta gặp Exception khi lấy dữ liệu trong Local Database, điều gì sẽ xảy ra?
 
 Với operator `concat`, khi xảy ra lỗi, **Observable** sẽ gọi `onError` và dừng tiến trình. Chính vì vậy nếu ta gặp **Exception** (Ví dụ như **IOException**) trong method `getLocalData()`, **Observable** sẽ không gọi tiếp `getRemoteData()` nữa. Vì vậy ta phải chủ động handle **Exception** để đảm bảo tiến trình được thực hiện đầy đủ:
@@ -249,6 +251,8 @@ Observable.zip(getLocalDataSource, getRemoteDataSource, { personalData, workData
 Operator `zip` đóng vai trò request 2 API, và đợi đến khi cả 2 hoàn thành, sẽ kết hợp dữ liệu trả về và emit 1 data duy nhất.
 
 ![zip](http://reactivex.io/documentation/operators/images/zip.o.png "Zip Operator")
+
+_Source: Reactivex.io_
 
 Để ý kỹ Diagram, ta sẽ nhận thấy mặc định 2 Observable sẽ được xử lý tuần tự trên cùng 1 Thread (được gọi thông qua `subscribeOn()`). Tức là Api đầu tiên emit data, chờ Api thứ 2 hoàn thành mới tiền hành kết hợp dữ liệu.
 
