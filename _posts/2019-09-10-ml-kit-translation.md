@@ -119,9 +119,9 @@ Và giao diện kết quả:
 
 ### Cài đặt thư viện
 
-Để có thể sử dụng đc các tính năng này của ML Kit, ta phải kết nối đến 1 firebase project. Bạn có thể tham khảo ở [đây](https://firebase.google.com/docs/android/setup) để có hướng dẫn chi tiết.
+Để có thể sử dụng đc các tính năng này của **ML Kit**, trước hết ta phải kết nối đến 1 firebase project. Bạn có thể tham khảo ở [đây](https://firebase.google.com/docs/android/setup) để có hướng dẫn chi tiết.
 
-Sau khi kết nối xong, ta đã có thể sử dụng các thư viện của ML Kit. Ở đây mình sử dụng 2 bộ thư viện về **Identify text's language** và **Translate Text** nên sẽ import vào file `app/build.gradle` như sau:
+Sau khi kết nối xong, chuyển sang phần dependencies. Ở đây mình sử dụng 2 bộ thư viện về **Identify text's language** và **Translate Text** nên sẽ import vào file `app/build.gradle` như sau:
 
 ```kotlin
 dependencies {
@@ -256,7 +256,7 @@ Hàm `translateLanguage()` được gọi với param `code` lấy từ kết qu
 Quay lại `translateLanguage()`, ở đây ta khởi tạo 1 instance `englishTranslator` với params là `options` được build từ source và target language. Đồng nghĩa với việc bộ translator ở đây sẽ có tính năng translate từ `ES` sang `EN` (Không dịch ngược lại).
 model sau khi download sẽ được lưu lại trong local cho lần sử dụng tiếp theo, hạn chế việc ta phải download lại liên tục mỗi lần sử dụng.
 
-Khi nhảy vào `downloadModelIfNeeded()` đồng nghĩa với việc model đã sẵn sàng cho việc dịch, ở đây ta sẽ gọi hàm `translate()` của instance `englishTranslator`:
+Khi nhảy vào `addOnSuccessListener` của `downloadModelIfNeeded()` đồng nghĩa với việc model đã sẵn sàng cho việc dịch, ở đây ta sẽ gọi hàm `translate()` của instance `englishTranslator`:
 
 ```kotlin
 englishTranslator.downloadModelIfNeeded()
