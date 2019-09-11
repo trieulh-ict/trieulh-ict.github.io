@@ -38,6 +38,10 @@ Thôi lan man vậy đủ rồi, chi tiết hơn các bạn có thể lên websi
 - **Bước 2**: Ấn nút chức năng để tiến hành xác định ngôn ngữ đồng thời dịch ngôn ngữ đó sang tiếng Anh
 - **Bước 3**: Hiển thị ngôn ngữ và đoạn văn bản kết quả
 
+Kết quả mong muốn:
+
+![translator-translate-2]({{site.url}}/assets/images/translator-translate-2.gif)
+
 ### Giao diện
 
 Để đáp ứng được các tính năng trên thì ta có thể tạo 1 giao diện cơ bản như sau:
