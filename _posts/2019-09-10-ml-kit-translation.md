@@ -14,7 +14,7 @@ Hey hey anh em! Lâu lắm mới viết tiếp blog, mặc dù không biết blo
 
 Hôm nay chúng ta sẽ thử vọc vạch 1 thứ vô cùng thú vị, đó là:
 
-![ml-kit](../assets/images/ml-kit.png)
+![ml-kit]({{site.url}}/assets/images/ml-kit.png)
 
 Đúng rồi đó, chính là ML Kit, bộ toolkit cho phép các nhà phát triển có thể đưa các tính năng về machine learning lên các thiết bị di động.
 
@@ -115,7 +115,7 @@ Thôi lan man vậy đủ rồi, chi tiết hơn các bạn có thể lên websi
 
 Và giao diện kết quả:
 
-![translator-ui](../assets/images/translator-ui.png)
+![translator-ui]({{site.url}}/assets/images/translator-ui.png)
 
 ### Cài đặt thư viện
 
@@ -185,7 +185,7 @@ Trong phương thức này, mình đã tạo instance `languageIdentifier` từ 
 
 Ok, giờ hãy test thử với đoạn text `¡Hola Mundo!` xem thế nào nhé:
 
-![translator-detect](../assets/images/translator-detect.gif)
+![translator-detect]({{site.url}}/assets/images/translator-detect.gif)
 
 Increíble!! Vậy là nó đã tự động xác định được đây là ngôn ngữ Tây Ban Nha. Giờ ta chuyển sang phần tiếp theo là dịch sang tiếng anh.
 
@@ -283,11 +283,11 @@ englishTranslator.downloadModelIfNeeded()
 
 Done. Vậy là đã xong phần code, bây giờ hãy thử xem tính năng có hoạt động trơn tru không nào:
 
-![translator-translate](../assets/images/translator-translate.gif)
+![translator-translate]({{site.url}}/assets/images/translator-translate.gif)
 
 Lần đầu download hơi lâu nên mình skip sang lần 2 như ở dưới :P
 
-![translator-translate-2](../assets/images/translator-translate-2.gif)
+![translator-translate-2]({{site.url}}/assets/images/translator-translate-2.gif)
 
 Sau khi đã download model về local thì việc dịch gần như là ngay lập tức. Trong thực tế ta có thể init các model cần thiết bằng cách download trước để trải nghiệm người dùng được tốt hơn.
 
