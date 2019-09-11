@@ -1,7 +1,7 @@
 ---
 title: "[Design Pattern] Delegate trong kotlin"
 categories:
-  - TodayILearned
+  - Design Pattern
 tags:
   - kotlin
   - design-pattern
