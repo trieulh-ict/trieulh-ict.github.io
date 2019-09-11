@@ -18,17 +18,15 @@ Hôm nay chúng ta sẽ thử vọc vạch 1 thứ vô cùng thú vị, đó là
 
 Đúng rồi đó, chính là ML Kit, bộ toolkit cho phép các nhà phát triển có thể đưa các tính năng về machine learning lên các thiết bị di động.
 
-Machine Learning (ML) không phải là khái niệm mới tính tới thời điểm hiện tại, nó đang càng ngày càng đóng 1 vị trí quan trọng trong lĩnh vực công nghệ, đặc biệt là những công việc dựa trên nền tảng dữ liệu lớn (Big Data).
+**Machine Learning** (ML) không phải là khái niệm mới tính tới thời điểm hiện tại, nó đang càng ngày càng đóng 1 vị trí quan trọng trong lĩnh vực công nghệ, đặc biệt là những công việc dựa trên nền tảng dữ liệu lớn (Big Data).
 
 Tuy nhiên, đi kèm với khả năng ưu việt, ML cũng vấp phải 1 số giới hạn nhất định, ví dụ như giới hạn về sức mạnh xử lý, hay giới hạn về khả năng lưu trữ thông tin.v..v.. Chính những điều này đã gây khó khăn không nhỏ cho những nhà phát triển khi muốn ứng dụng ML lên các thiết bị di động, những cỗ máy bỏ túi có hiệu năng nhỏ hơn rất nhiều so với yêu cầu tối thiểu của 1 thiết bị cần phải có để phục vụ cho các tác vụ ML.
 
-Chính vì thế mà ML Kit được Google giới thiệu như 1 giải pháp giúp các nhà phát triển di động có thể dễ dàng triển khái các tính năng ML của mình vào trong ứng dụng, mà không phải lo lắng về việc tiêu tốn quá nhiều tài nguyên thiết bị.
-
+Chính vì thế mà **ML Kit** được Google giới thiệu như 1 giải pháp giúp các nhà phát triển di động có thể dễ dàng triển khái các tính năng ML của mình vào trong ứng dụng, mà không phải lo lắng về việc tiêu tốn quá nhiều tài nguyên thiết bị.
 
 ## 1. Mục tiêu bài viết
 
-Thôi lan man vậy đủ rồi, chi tiết hơn các bạn có thể lên website của Google để tìm hiểu kĩ hơn về ML Kit nhé. Trong bài viết này mình chỉ muốn thử 1 trong các tính năng mà ML Kit đã tích hợp sẵn trong SDK của họ: **Identify text's language** và **Translate Text**
-
+Thôi lan man vậy đủ rồi, chi tiết hơn các bạn có thể lên website của Google để tìm hiểu kĩ hơn về **ML Kit** nhé. Trong bài viết này mình chỉ muốn thử 1 trong các tính năng mà ML Kit đã tích hợp sẵn trong SDK của họ: **Identify text's language** và **Translate Text**
 
 ## 2. Triển khai
 
@@ -292,7 +290,6 @@ Lần đầu download hơi lâu nên mình skip sang lần 2 như ở dưới :P
 ![translator-translate-2](../assets/images/translator-translate-2.gif)
 
 Sau khi đã download model về local thì việc dịch gần như là ngay lập tức. Trong thực tế ta có thể init các model cần thiết bằng cách download trước để trải nghiệm người dùng được tốt hơn.
-
 
 ## 3. Kết
 
