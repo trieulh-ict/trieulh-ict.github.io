@@ -314,7 +314,7 @@ Kết quả cuối cùng:
 
 ![coordinate]({{site.url}}/assets/images/path-image.png)
 
-e. Tạo Animation cho Path
+### e. Tạo Animation cho Path
 
 Phần này tương đối đơn giản rồi. Để ý ở phần trên mình sử dụng `pathPercentage` để biểu diễn thành phần hiển thị. Nhiệm vụ của ta là tạo 1 **Animator** để thay đổi giá trị này theo thời gian. Ta sẽ sửa lại hàm setter của `pathPercentage` như sau:
 
